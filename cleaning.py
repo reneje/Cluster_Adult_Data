@@ -11,15 +11,13 @@ print(type(files))
 index = []
 for i in range (0,len(files)):
     m = re.search(r"[\?]",files[i])
-#     if m is not None:
-#         index.append(i)
-      if m is None:
-          fileopen.writelines(files[i])
-          fileopen.writelines("\n")
+    if m is not None:
+        index.append(i)
+      
 
-# for i in range (0,len(files)):
-#     if i not in index:
-#         fileopen.writelines(files[i])
-#         fileopen.writelines("\n")
+for i in range (0,len(files)):
+    if i not in index:
+        fileopen.writelines(files[i])
+        fileopen.writelines("\n")
 
 fileopen.close()
